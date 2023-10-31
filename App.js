@@ -10,8 +10,10 @@ import ButtonForMore from './componentes/ButtonForMore';
 function App() {
   return (
     <>
+        {/* Main container with Tailwind CSS classes for styling */}
         <div className="App bg-gray-900 m-0 p-0 container mx-auto ">
         <nav className="">
+           {/* Navigation bar */}
           <ul className='flex text-white p-4 space-x-4 '>
             <h1>HiStore</h1>
             <li className="hover:underline"><a href="/">Home</a></li>          
@@ -19,25 +21,31 @@ function App() {
             <li className="hover:underline"><a href="/about">About Us</a></li>
           </ul>
         </nav>
+        {/* Header with a banner and a slider */}
         <header>
           <div className='banner  '>
             <Slider>
+              {/* Mapping over banners array to create slides */}
+
               {banners.map((banner, index) => (
                 <div key={index}>
                   <img className='w-full ' src={banner.src} alt='banner' />
                   <div className='top-0 left-0 p-5'>
                     <h1 className='text-4xl font-bold text-white'>{banner.h1}</h1>
                     <p className='text-white'>{banner.p}</p>
+                    {/* ButtonForMore component with onClick event */}
+
                     <ButtonForMore text={banner.button} onClick={() => alert('More info about this product')} />
 
                   </div>
                 </div>
 
-              ))}
+              ))} 
             </Slider>
           </div>
         </header>
         <main>
+          {/* Section for displaying key features */}
           <div className='flex bg-green-500 p-8 space-x-40 items-center'>
             <h1>Best upgrade solutions</h1>
             <h1>Good Prices</h1>
@@ -45,23 +53,28 @@ function App() {
             <h1>Fast delivery</h1>
             <h1>Support 24/7</h1>
           </div>
+
+          {/* Section for displaying products */}
           <section className='p-6 flex justify-center'>
             <div className='product-container  flex space-x-10 m-10 border border-gray-500 p-9'>
+              {/* Mapping over products array to create product cards */}
               {products.map((product) => (
                 <div className='product-holder shadow-custom-color border border-gray-500 p-8 w-full ' key={product.id}>
                   <div className='product  text-white'>
                     <img className='w-full h-60' src={product.image} alt='product' />
                     <h2 className='p-2 mb-1'>{product.name}</h2>
                     <p>{product.description}
+                    {/* ButtonForMore component with onClick event */}
                     <ButtonForMore className='p-10' text='More' onClick={() => alert('More info about this product')} />
                     </p>
                   </div>
-                  </div> 
+                </div> 
               ))} 
-              
             </div>
           </section>  
         </main>
+
+        {/* Footer section */}
         <footer >
           <div className='bg-blue-900 text-white p-8'>
             <div className='flex justify-center space-x-40'>
@@ -72,17 +85,15 @@ function App() {
               <div className='flex flex-col'>
                 <h1 className='text-2xl'>Contact Us</h1>
                 <p>Phone: 123456789</p>
-                <p>Email:
-
-                </p>
+                <p>Email:</p>
               </div>
             </div>
           </div>
-
         </footer>
-      </div>
-    </>
+        </div>
+    </> 
   );
 }
 
-export default App;
+// Exporting the App component
+export default App; 
