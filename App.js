@@ -76,8 +76,8 @@ function App() {
 
         {/* Footer section */}
         <footer >
-          <div className='bg-blue-900 text-white p-8'>
-            <div className='flex justify-center space-x-40'>
+          <div className='bg-blue-900 text-white p-2'>
+            <div className='flex justify-center '>
               <div className='flex flex-col'>
                 <h1 className='text-2xl'>HiStore</h1>
                 <p>HiStore is a website that sells Websites.</p>
